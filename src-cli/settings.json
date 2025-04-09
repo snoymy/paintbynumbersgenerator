@@ -15,12 +15,12 @@
     },
     "removeFacetsSmallerThanNrOfPoints": 20,
     "removeFacetsFromLargeToSmall": true,
-    "maximumNumberOfFacets": 100,
+    "maximumNumberOfFacets": 10000,
     "nrOfTimesToHalveBorderSegments": 2,
     "narrowPixelStripCleanupRuns": 3,
     "resizeImageIfTooLarge": true,
-    "resizeImageWidth": 1024,
-    "resizeImageHeight": 1024,
+    "resizeImageWidth": 2000,
+    "resizeImageHeight": 2000,
     "outputProfiles": [
         {
             "name": "full",
