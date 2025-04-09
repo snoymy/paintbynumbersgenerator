@@ -24,8 +24,8 @@ export class Settings {
     public nrOfTimesToHalveBorderSegments: number = 2;
 
     public resizeImageIfTooLarge: boolean = true;
-    public resizeImageWidth: number = 1024;
-    public resizeImageHeight: number = 1024;
+    public resizeImageWidth: number = 2000;
+    public resizeImageHeight: number = 2000;
 
     public randomSeed: number = new Date().getTime();
 }

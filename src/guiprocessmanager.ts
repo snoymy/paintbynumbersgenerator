@@ -4,7 +4,8 @@
 
 import { ColorMapResult, ColorReducer } from "./colorreductionmanagement";
 import { CancellationToken, delay, IMap, RGB } from "./common";
-import { FacetBorderSegmenter } from "./facetBorderSegmenter";
+// import { FacetBorderSegmenter } from "./facetBorderSegmenter";
+import { FacetBorderSegmenter } from "../src/facetBorderSegmenter";
 import { FacetBorderTracer } from "./facetBorderTracer";
 import { FacetCreator } from "./facetCreator";
 import { FacetLabelPlacer } from "./facetLabelPlacer";
