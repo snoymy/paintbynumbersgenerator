@@ -19,15 +19,15 @@
     "nrOfTimesToHalveBorderSegments": 2,
     "narrowPixelStripCleanupRuns": 3,
     "resizeImageIfTooLarge": true,
-    "resizeImageWidth": 2000,
-    "resizeImageHeight": 2000,
+    "resizeImageWidth": 1024,
+    "resizeImageHeight": 1024,
     "outputProfiles": [
         {
             "name": "full",
             "svgShowLabels": true,
             "svgFillFacets": true,
             "svgShowBorders": true,
-            "svgSizeMultiplier": 3,
+            "svgSizeMultiplier": 2,
             "svgFontSize": 50,
             "svgFontColor": "#333",
             "filetype": "png"
@@ -37,7 +37,7 @@
             "svgShowLabels": true,
             "svgFillFacets": false,
             "svgShowBorders": true,
-            "svgSizeMultiplier": 3,
+            "svgSizeMultiplier": 2,
             "svgFontSize": 50,
             "svgFontColor": "#333",
             "filetype": "svg"
@@ -47,7 +47,7 @@
             "svgShowLabels": false,
             "svgFillFacets": true,
             "svgShowBorders": false,
-            "svgSizeMultiplier": 3,
+            "svgSizeMultiplier": 2,
             "svgFontSize": 50,
             "svgFontColor": "#333",
             "filetype": "jpg",
