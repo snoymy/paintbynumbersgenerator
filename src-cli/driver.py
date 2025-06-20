@@ -33,12 +33,12 @@ def run_js_and_wait(js_file, args, output_folder, expected_image_name, timeout=3
     return False
 
 
-input_filename = "j_surreal_upscaled"
-output_filename = "j_surreal_upscaled"
+input_filename = "bird"
+output_filename = "bird"
 
 run_js_and_wait(
     js_file="main.js",
-    args=["-i", f"input/{input_filename}.jpeg", "-o", f"results/{output_filename}.svg"],
+    args=["-i", f"input/{input_filename}.png", "-o", f"results/{output_filename}.svg"],
     output_folder="results",
     expected_image_name=f"{output_filename}-full.png",
     timeout=120,  # wait up to 120 seconds
