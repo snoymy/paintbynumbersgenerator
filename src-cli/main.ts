@@ -13,7 +13,7 @@ import { FacetResult } from "../src/facetmanagement";
 import { FacetReducer } from "../src/facetReducer";
 import { Settings } from "../src/settings";
 import { Point } from "../src/structs/point";
-const svg2img = require("svg2img");
+import { Resvg, ResvgRenderOptions } from "@resvg/resvg-js";
 
 class CLISettingsOutputProfile {
   public name: string = "";
@@ -47,7 +47,7 @@ async function main() {
 
   let configPath = args.c;
   if (typeof configPath === "undefined") {
-    configPath = path.join(process.cwd(), "settings.json");
+    configPath = path.join(process.cwd(), "src-cli", "settings.json");
   } else {
     if (!path.isAbsolute(configPath)) {
       configPath = path.join(process.cwd(), configPath);
@@ -254,28 +254,16 @@ async function main() {
       fs.writeFileSync(svgProfilePath, svgString);
     } else if (profile.filetype === "png") {
       const imageBuffer = await new Promise<Buffer>((then, reject) => {
-        svg2img(svgString, function (error: Error, buffer: Buffer) {
-          if (error) {
-            reject(error);
-          } else {
-            then(buffer);
-          }
-        });
-      });
-      fs.writeFileSync(svgProfilePath, imageBuffer);
-    } else if (profile.filetype === "jpg") {
-      const imageBuffer = await new Promise<Buffer>((then, reject) => {
-        svg2img(
-          svgString,
-          { format: "jpg", quality: profile.filetypeQuality },
-          function (error: Error, buffer: Buffer) {
-            if (error) {
-              reject(error);
-            } else {
-              then(buffer);
-            }
-          }
-        );
+         const opts: ResvgRenderOptions = {
+          fitTo: {
+            mode: 'width',
+            value: 1200,
+          },
+        }
+        const resvg = new Resvg(svgString, opts)
+        const pngData = resvg.render()
+        const pngBuffer = pngData.asPng()
+        then(pngBuffer)
       });
       fs.writeFileSync(svgProfilePath, imageBuffer);
     }
@@ -315,7 +303,7 @@ async function main() {
         color,
         colorAlias: colorAliasesByColor[color.join(",")],
         frequency: colorFrequency[index],
-        index,
+        index: index+1,
       };
     }),
     null,
@@ -451,7 +439,7 @@ async function createSVG(
                                             <text font-family="Tahoma" font-size="${
                                               fontSize / nrOfDigits
                                             }" dominant-baseline="middle" text-anchor="middle" fill="${fontColor}">${
-          f.color
+          f.color+1
         }</text>
                                         </svg>
                                        </g>`;

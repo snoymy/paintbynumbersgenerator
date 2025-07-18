@@ -1,5 +1,5 @@
 {
-    "randomSeed": 7707,
+    "randomSeed": 0,
     "kMeansNrOfClusters": 16,
     "kMeansMinDeltaDifference": 1,
     "kMeansClusteringColorSpace": 0,
@@ -17,7 +17,7 @@
     "removeFacetsFromLargeToSmall": true,
     "maximumNumberOfFacets": 10000,
     "nrOfTimesToHalveBorderSegments": 2,
-    "narrowPixelStripCleanupRuns": 3,
+    "narrowPixelStripCleanupRuns": 10,
     "resizeImageIfTooLarge": true,
     "resizeImageWidth": 1024,
     "resizeImageHeight": 1024,
@@ -33,6 +33,16 @@
             "filetype": "png"
         },
         {
+            "name": "fillFaces",
+            "svgShowLabels": false,
+            "svgFillFacets": true,
+            "svgShowBorders": false,
+            "svgSizeMultiplier": 2,
+            "svgFontSize": 50,
+            "svgFontColor": "#333",
+            "filetype": "png"
+        },
+        {
             "name": "bordersLabels",
             "svgShowLabels": true,
             "svgFillFacets": false,
@@ -41,17 +51,6 @@
             "svgFontSize": 50,
             "svgFontColor": "#333",
             "filetype": "svg"
-        },
-        {
-            "name": "jpgtest",
-            "svgShowLabels": false,
-            "svgFillFacets": true,
-            "svgShowBorders": false,
-            "svgSizeMultiplier": 2,
-            "svgFontSize": 50,
-            "svgFontColor": "#333",
-            "filetype": "jpg",
-            "filetypeQuality": 80
         }
     ]
 }
